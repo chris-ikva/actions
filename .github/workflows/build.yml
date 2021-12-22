@@ -36,5 +36,4 @@ jobs:
         with:
           repository: ${{ inputs.org }}/${{ inputs.coordinator }}
           ref: main
-          token: "${{ secrets.token }}"
           path: coordinator
