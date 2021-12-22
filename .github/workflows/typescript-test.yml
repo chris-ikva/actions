@@ -1,0 +1,28 @@
+# this workflow should be used for every pipeline that wants to test typescript files
+# assumes you have husky script set up correctly
+
+# Build, deploy and test this repo
+name: test typescript
+
+# Controls when the workflow will run
+on:
+  workflow_call:
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          
+      - name: Test
+        run: |
+          npm install
+          npm run compile
+          npm run test -- --coverage
