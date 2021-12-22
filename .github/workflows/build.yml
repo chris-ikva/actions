@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: "16.x"
 
-      - name: Checkout kvasir_0000
+      - name: Checkout external actions from ${{ inputs.coordinator }}
         uses: actions/checkout@v2
         with:
           repository: ${{ inputs.org }}/${{ inputs.coordinator }}
