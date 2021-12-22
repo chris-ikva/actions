@@ -1,0 +1,40 @@
+# Build this package and create the docker containers etc
+name: Build
+
+# Controls when the workflow will run
+on:
+  workflow_call:
+    inputs:
+      org:
+        required: true
+        type: string
+      coordinator:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  build:
+    # this should stop this running on forks: github.repository_owner == 'kvasira'
+    # also only run this if it is a merge to main
+    if: github.repository_owner == '${{ inputs.org }}' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+
+      - name: Checkout kvasir_0000
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ inputs.org }}/${{ inputs.coordinator }}
+          ref: main
+          token: "${{ secrets.token }}"
+          path: coordinator
