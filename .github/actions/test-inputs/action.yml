@@ -8,11 +8,6 @@ secrets:
 runs:
   using: "composite"
   steps:
-    - run: echo  ${{ github.event.inputs.org }}
-      shell: bash
-
     - run: echo  ${{inputs.org}}
       shell: bash
       
-    - run: echo ${{secrets.testsecret}}
-      shell: bash
