@@ -1,0 +1,9 @@
+name: quick test
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+jobs:
+  dummy:
+    - uses: actions/checkout@v2
+    - uses: .actions/.github/actions/dummy
