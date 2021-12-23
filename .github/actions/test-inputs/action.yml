@@ -2,7 +2,7 @@ name: test inputs
 inputs:
   org:
     type: string
-    default: $ORGNAME
+    default: "${{env.ORGNAME}}"
 secrets:
   testsecret:
     
