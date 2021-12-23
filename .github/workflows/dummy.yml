@@ -7,7 +7,12 @@ jobs:
   dummy:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "ORGNAME=env_iorg" >> GITHUB_ENV
+        shell: bash
       - uses: actions/checkout@v2
       - uses: ./.github/actions/test-inputs
         with:
           org: bob
+      
+      - uses: ./.github/actions/test-inputs
+
