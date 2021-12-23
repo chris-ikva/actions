@@ -9,6 +9,8 @@ jobs:
     steps:
       - run: echo "ORGNAME=env_iorg" >> GITHUB_ENV
         shell: bash
+      - run: echo $ORGNAME
+        shell: bash
       - uses: actions/checkout@v2
       - uses: ./.github/actions/test-inputs
         with:
