@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: chris-ikva/actions/.github/actions/test-inputs@main
+      - uses: ./.github/actions/test-inputs
         with:
           org: bob
