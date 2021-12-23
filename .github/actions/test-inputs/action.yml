@@ -10,9 +10,9 @@ runs:
   steps:
     - run: echo  ${{inputs.org}}
       shell: bash
-    - run: image_tag='bob'
-      shell: bash
-    - run: echo  "IMAGE_TAG=$image_tag" >> $GITHUB_ENV
+    - run: |
+        image_tag='bob'
+        echo  "IMAGE_TAG=$image_tag" >> $GITHUB_ENV
       shell: bash
     - run: echo  ${IMAGE_TAG}
       shell: bash
