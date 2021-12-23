@@ -7,4 +7,4 @@ jobs:
   dummy:
     steps:
       - uses: actions/checkout@v2
-      - uses: .actions/.github/actions/test-inputs
+      - uses: chris-ikva/actions/.github/actions/test-inputs@main
