@@ -7,4 +7,6 @@ runs:
   using: "composite"
   steps:
     - run: echo  ${{ INPUT_ORG }}
+      shell: bash
     - run: echo  ${{ github.event.inputs.org }}
+      shell: bash
