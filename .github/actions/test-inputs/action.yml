@@ -5,6 +5,5 @@ inputs:
     
 runs:
   steps:
-    - run: echo "${{ input.org }}
     - run: echo  ${{ INPUT_ORG }}
     - run: echo  ${{ github.event.inputs.org }}
