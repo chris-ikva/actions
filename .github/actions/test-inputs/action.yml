@@ -8,3 +8,6 @@ runs:
   steps:
     - run: echo  ${{ github.event.inputs.org }}
       shell: bash
+
+    - run: echo  ${{inputs.org}}
+      shell: bash
