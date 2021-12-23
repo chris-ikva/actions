@@ -2,7 +2,7 @@ name: test inputs
 inputs:
   org:
     type: string
-output:
+outputs:
   specific_version:
   value: ${{ steps.get_something.outputs.specific_version }}
     
