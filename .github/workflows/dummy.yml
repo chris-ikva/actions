@@ -9,3 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: chris-ikva/actions/.github/actions/test-inputs@main
+        with:
+          org: bob
