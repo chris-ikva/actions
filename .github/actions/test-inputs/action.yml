@@ -4,6 +4,7 @@ inputs:
     type: string
     
 runs:
+  using: "composite"
   steps:
     - run: echo  ${{ INPUT_ORG }}
     - run: echo  ${{ github.event.inputs.org }}
