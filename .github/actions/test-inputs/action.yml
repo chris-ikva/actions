@@ -12,7 +12,7 @@ runs:
     - id: get_something
       shell: bash
       run: |
-        somedata = "this is a thing"
+        somedata="this is a thing"
         echo "::set-output name=specific_version::$somedata"
     - run: echo  ${{inputs.org}}
       shell: bash
