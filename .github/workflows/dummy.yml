@@ -12,9 +12,7 @@ jobs:
       - run: echo $ORGNAME
         shell: bash
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/test-inputs
+      - uses: kvasira/i_github_utils/.github/actions/create_image_tag@main
         with:
-          org: bob
-      
-      - uses: ./.github/actions/test-inputs
+          package_version: 0.1.1
 
